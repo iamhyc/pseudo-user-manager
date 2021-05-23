@@ -15,8 +15,8 @@ if __name__ == '__main__':
         package_data = {},
         entry_points = {
             'console_scripts': [
-                'pseudo-manager = pseudo_user_manager:manager:main',
-                'pseudo-switch = pseudo_user_manager:switch:main'
+                'pseudo-manager = manager:main',
+                'pseudo-switch = switch:main'
             ]
         }
     )
