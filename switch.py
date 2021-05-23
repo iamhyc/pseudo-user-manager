@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import os, sys, sqlite3
+import os, sys
 from pathlib import Path
 import getpass, password
 from utils import *
