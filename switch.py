@@ -12,14 +12,18 @@ def switch_context(name):
     os.environ['XDG_DATA_HOME']   = (_home/'.data').as_posix()
     os.putenv('PSEUDO_USER', name)
     os.chdir(_home)
-    os.execv(USER_SHELL)
+    os.execl(USER_SHELL, USER_SHELL)
     pass
 
 def verify_password(name:str) -> bool:
     count = 0
     flag  = False
     #TODO: fetch the user password here
+    _user = ACCOUNT_DB.get(name)
+    if not _user:
+        return False
     _pass = password.Password(method='sha256', hash_encoding='base64')
+    _pass = _user[1]
 
     _NUM = 3
     while not flag and count<_NUM:
