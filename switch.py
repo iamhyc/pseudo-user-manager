@@ -4,11 +4,6 @@ from pathlib import Path
 import getpass, password
 from utils import *
 
-# homedir=$( getent passwd "$USER" | cut -d: -f6 )
-
-def expand_pseudo_home(name:str) -> Path:
-    return USER_HOME / name
-
 def switch_context(name):
     _home = expand_pseudo_home(name)
     os.environ['HOME'] = _home.as_posix()
