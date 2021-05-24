@@ -3,7 +3,7 @@ import os, sys, argparse
 from pathlib import Path
 import getpass, password
 import shutil
-from utils import *
+from .utils import *
 
 def db_init(reset=False):
     if not DB_FILE.exists():

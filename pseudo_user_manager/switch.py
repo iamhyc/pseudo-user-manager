@@ -2,7 +2,7 @@
 import os, sys
 from pathlib import Path
 import getpass, password
-from utils import *
+from .utils import *
 
 def switch_context(name):
     _home = expand_pseudo_home(name)
