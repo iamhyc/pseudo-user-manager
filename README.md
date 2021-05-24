@@ -1,4 +1,5 @@
 # Pseudo User for Remote SSH
+> 还有点问题，请不要使用本仓库
 
 ### 用途
 比如你在服务器上只有一个账号，但你想把这个账号共享给一个小组，就可以用这个创建pseudo users；
