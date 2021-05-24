@@ -42,28 +42,27 @@ def verify_password(name:str) -> bool:
         pass
     return flag
 
-def main(name):
-    if not expand_pseudo_home(name).exists():
-        raise Exception('No pseudo user "%s" exists.'%name)
-    if not verify_password(name):
-        raise Exception('Wrong password.')
-    switch_context(name)
-    pass
-
 def login():
     print('Pseudo User Login Interface')
     name = None
     while not name:
         name = input('Login: ').strip()
-    main(name)
-    pass
+    return name
+
+def main():
+    if len(sys.argv)==2:
+        name = sys.argv[1]
+    else:
+        name = login()
+    if not expand_pseudo_home(name).exists():
+        raise Exception('No pseudo user "%s" exists.'%name)
+    if not verify_password(name):
+        raise Exception('Wrong password.')
+    switch_context(name)
 
 if __name__ == '__main__':
     try:
-        if len(sys.argv) != 2:
-            login()
-        else:
-            main(sys.argv[1])
+        main()
     except Exception as e:
         raise e #print(e)
     finally:
