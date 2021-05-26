@@ -13,4 +13,6 @@ pseudo user登陆时，会启动一个shell，并创建和pseudo user home folde
 - 支持本地密码验证（sqlite，可以更换为remote）
 
 ### Todos
+- 修复密码保存问题
 - 支持通过known host public key免密码直接登录
+- 支持自动判断是否切换到home目录

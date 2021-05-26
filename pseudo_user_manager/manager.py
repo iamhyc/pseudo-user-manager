@@ -38,8 +38,8 @@ def useradd(name:str) -> tuple: # (bool, str)
         return (False, 'Password not match.')
     else:
         _pass = password.Password(method='sha256', hash_encoding='base64')
-        _pass = p1
-        ACCOUNT_DB.add(name, _pass, 'sha256')
+        _pass = p1 #FIXME: wrong value assignment
+        ACCOUNT_DB.add(name, _pass, 'sha256') 
         useradd_base(name)
         return (True, '')
     pass
