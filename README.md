@@ -22,3 +22,4 @@ pseudo user登录时，会启动一个shell，并创建和pseudo user home folde
 ### Todos
 - 修复密码保存问题
 - 支持通过known host public key免密码直接登录
+- 使用GNU readline将`pseudo-switch`作为shell
